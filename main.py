@@ -91,6 +91,12 @@ def main():
     print(text)
     print("\n")
 
+    # Save the OCR output to a text file
+    output_file = os.path.splitext(args.image)[0] + "_output.txt"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"[INFO] OCR output saved to: {output_file}")
+
 
 if __name__ == "__main__":
     main()
